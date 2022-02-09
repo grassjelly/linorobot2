@@ -118,7 +118,7 @@ def generate_launch_description():
                 {'serial_port': ''},
                 {'topic_name': LaunchConfiguration('topic_name')},
                 {'lidar_frame': LaunchConfiguration('frame_id')},
-                {'range_threshold': 0.005}
+                {'range_threshold': 0.21}
             ]
         )
     ])
