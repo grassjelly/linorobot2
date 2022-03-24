@@ -7,9 +7,7 @@
         <geometry>
           <mesh filename="${rim_mesh}" scale="${scale} ${scale} ${scale}"/>
         </geometry>
-        <material name="blue">
-            <color rgba="0.1764 0.4588 0.8509 1.0"/>
-        </material>
+        <material name="white"/>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
@@ -33,9 +31,7 @@
         <geometry>
           <mesh filename="${wheel_mesh}" scale="${scale} ${scale} ${scale}"/>
         </geometry>
-        <material name="blue">
-            <color rgba="0.1764 0.4588 0.8509 1.0"/>
-        </material>
+        <material name="black"/>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
@@ -43,7 +39,6 @@
           <cylinder radius="${radius}" length="${width}"/>
         </geometry>
       </collision>
-
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="${mass}"/>
