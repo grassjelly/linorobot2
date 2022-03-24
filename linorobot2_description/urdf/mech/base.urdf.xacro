@@ -1,22 +1,20 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:macro name="base" params="length width height mass wheel_radius wheel_pos_z">
+  <xacro:macro name="base" params="length width height mass wheel_radius wheel_pos_z mesh scale">
     <link name="base_footprint"/>
     
     <link name="base_link">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <box size="${length} ${width} ${height}"/>
-          <!-- <mesh filename="" scale="0.001 0.001 0.001"/> -->
+          <!-- <box size="${length} ${width} ${height}"/> -->
+          <mesh filename="${mesh}" scale="${scale} ${scale} ${scale}"/>
         </geometry>
-        <material name="yellow">
-          <color rgba="0.8784 0.6627 0.6627 1.0"/>
-        </material>
+
       </visual>
       
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 ${height/2}" rpy="0 0 0"/>
         <geometry>
           <box size="${length} ${width} ${height}"/>
         </geometry>
@@ -31,15 +29,8 @@
       </inertial>
     </link>
 
-    <gazebo reference="base_link">  
-      <visual>  
-        <material>
-          <ambient>0.8392 0.6314 0.0 1.0</ambient>  
-          <diffuse>0.8392 0.6314 0.0 1.0</diffuse>  
-          <specular>0.99 0.99 0.99 1.0</specular>  
-          <emissive>0.0 0.0 0.0 0.0</emissive>  
-        </material>
-      </visual> 
+    <gazebo reference="base_link">
+      <material>Gazebo/FlatBlack</material>
     </gazebo>
 
     <joint name="base_to_footprint" type="fixed">

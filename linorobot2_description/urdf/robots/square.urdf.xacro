@@ -2,14 +2,14 @@
 <robot name="linorobot2_2wd" xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:property name="base_length" value="0.25" />
   <xacro:property name="base_width" value="0.25" />
-  <xacro:property name="base_height" value="0.003" />
+  <xacro:property name="base_height" value="0.358" />
   <xacro:property name="base_mass" value="1" />
 
   <xacro:property name="wheel_radius" value="0.045" />
   <xacro:property name="wheel_width" value="0.01" />
   <xacro:property name="wheel_pos_x" value="0.08" />
   <xacro:property name="wheel_pos_y" value="0.12" />
-  <xacro:property name="wheel_pos_z" value="-0.045" />
+  <xacro:property name="wheel_pos_z" value="-0.04" />
   <xacro:property name="wheel_mass" value=".1" />
   <xacro:property name="wheel_torque" value="20" />
   <xacro:property name="front_caster_wheel" value="false" />
@@ -42,6 +42,8 @@
     mass="${base_mass}"
     wheel_radius="${wheel_radius}"
     wheel_pos_z="${wheel_pos_z}"
+    mesh="$(find linorobot2_description)/urdf/mesh/base.stl"
+    scale="0.001"
   />
 
   <xacro:wheel 
@@ -52,6 +54,9 @@
     pos_y="${wheel_pos_y}" 
     pos_z="${wheel_pos_z}" 
     mass="${wheel_mass}"
+    rim_mesh="$(find linorobot2_description)/urdf/mesh/rim.stl"
+    wheel_mesh="$(find linorobot2_description)/urdf/mesh/wheel.stl"
+    scale="0.001"
   />
 
   <xacro:wheel 
@@ -62,6 +67,9 @@
     pos_y="${-wheel_pos_y}" 
     pos_z="${wheel_pos_z}" 
     mass="${wheel_mass}"
+    rim_mesh="$(find linorobot2_description)/urdf/mesh/rim.stl"
+    wheel_mesh="$(find linorobot2_description)/urdf/mesh/wheel.stl"
+    scale="0.001"
   />
 
   <xacro:if value="${front_caster_wheel}">
