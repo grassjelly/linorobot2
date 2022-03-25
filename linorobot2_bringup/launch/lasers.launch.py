@@ -101,7 +101,7 @@ def generate_launch_description():
             output='screen',
             remappings=[('scan', LaunchConfiguration('topic_name'))],
             parameters=[{
-                'port': '/dev/ttyACM0',
+                'port': '/dev/xv11lidar',
                 'baud_rate': 115200, 
                 'frame_id': LaunchConfiguration('frame_id'),
                 'firmware_version': 2
