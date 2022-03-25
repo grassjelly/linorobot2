@@ -42,7 +42,7 @@
     mass="${base_mass}"
     wheel_radius="${wheel_radius}"
     wheel_pos_z="${wheel_pos_z}"
-    mesh="$(find linorobot2_description)/urdf/mesh/base.stl"
+    mesh="file://$(find linorobot2_description)/urdf/mesh/base.stl"
     scale="0.001"
   />
 
@@ -54,8 +54,8 @@
     pos_y="${wheel_pos_y}" 
     pos_z="${wheel_pos_z}" 
     mass="${wheel_mass}"
-    rim_mesh="$(find linorobot2_description)/urdf/mesh/rim.stl"
-    wheel_mesh="$(find linorobot2_description)/urdf/mesh/wheel.stl"
+    rim_mesh="file://$(find linorobot2_description)/urdf/mesh/rim.stl"
+    wheel_mesh="file://$(find linorobot2_description)/urdf/mesh/wheel.stl"
     scale="0.001"
   />
 
@@ -67,8 +67,8 @@
     pos_y="${-wheel_pos_y}" 
     pos_z="${wheel_pos_z}" 
     mass="${wheel_mass}"
-    rim_mesh="$(find linorobot2_description)/urdf/mesh/rim.stl"
-    wheel_mesh="$(find linorobot2_description)/urdf/mesh/wheel.stl"
+    rim_mesh="file://$(find linorobot2_description)/urdf/mesh/rim.stl"
+    wheel_mesh="file://$(find linorobot2_description)/urdf/mesh/wheel.stl"
     scale="0.001"
   />
 
