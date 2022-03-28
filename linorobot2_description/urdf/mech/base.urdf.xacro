@@ -23,7 +23,7 @@
       <collision>
         <origin xyz="0 0 ${height/2}" rpy="0 0 0"/>
         <geometry>
-          <box size="${length} ${width} ${height}"/>
+          <mesh filename="${mesh}" scale="${scale} ${scale} ${scale}"/>
         </geometry>
       </collision>
 
