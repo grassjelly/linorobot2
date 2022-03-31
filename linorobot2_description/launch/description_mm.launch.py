@@ -63,7 +63,10 @@ def generate_launch_description():
             name='joint_state_publisher',
             condition=IfCondition(LaunchConfiguration("publish_joints")),
             parameters=[
-                {'use_sim_time': LaunchConfiguration('use_sim_time')}
+                {
+                    'use_sim_time': LaunchConfiguration('use_sim_time'),
+                    'source_list': ['/robot_arm/joint_states'],
+                }
             ]
         ),
 
@@ -79,7 +82,7 @@ def generate_launch_description():
                         'xacro ', 
                         LaunchConfiguration('urdf'), 
                         ' use_sim_time:=', 
-                        Launch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Configuration('use_sim_time')
+                        LaunchConfiguration('use_sim_time')
                     ])
                 }
             ]
