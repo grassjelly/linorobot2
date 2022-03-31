@@ -76,9 +76,6 @@ def generate_launch_description():
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(description_launch_path),
-            launch_arguments={
-                'publish_joints': 'false',
-            }.items()
         ),
 
         IncludeLaunchDescription(
@@ -92,6 +89,9 @@ def generate_launch_description():
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(arm_launch_path),
-            launch_arguments={'launch_description': 'false'}.items()   
+            launch_arguments={
+                'launch_description': 'false', 
+                'joint_states_topic': '/robot_arm/joint_states', 
+            }.items()
         )
     ])
