@@ -65,13 +65,13 @@ def generate_launch_description():
             parameters=[
                 {
                     'use_sim_time': LaunchConfiguration('use_sim_time'),
-                    # 'source_list': ['/robot_arm/joint_states'],
-                    # 'robot_description': Command([
-                    #     'xacro ', 
-                    #     LaunchConfiguration('urdf'), 
-                    #     ' use_sim_time:=', 
-                    #     LaunchConfiguration('use_sim_time')
-                    # ])
+                    'source_list': ['/robot_arm/joint_states'],
+                    'robot_description': Command([
+                        'xacro ', 
+                        LaunchConfiguration('urdf'), 
+                        ' use_sim_time:=', 
+                        LaunchConfiguration('use_sim_time')
+                    ])
                 }
             ]
         ),
