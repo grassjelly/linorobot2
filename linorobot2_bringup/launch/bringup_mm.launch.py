@@ -75,10 +75,7 @@ def generate_launch_description():
         ),
 
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(description_launch_path),
-            launch_arguments={
-                'publish_joints': 'false', 
-            }.items()
+            PythonLaunchDescriptionSource(description_launch_path)
         ),
 
         IncludeLaunchDescription(
@@ -94,19 +91,7 @@ def generate_launch_description():
             PythonLaunchDescriptionSource(arm_launch_path),
             launch_arguments={
                 'launch_description': 'false', 
-                # 'joint_states_topic': '/robot_arm/joint_states', 
+                'joint_states_topic': '/robot_arm/joint_states', 
             }.items()
-        ),
-
-        Node(
-            package = "tf2_ros", 
-            executable = "static_transform_publisher",
-            arguments = ["0.08", "-0.12", "-0.04", "0", "0", "0", "base_link", "right_wheel_link"]
-        ),
-
-        Node(
-            package = "tf2_ros", 
-            executable = "static_transform_publisher",
-            arguments = ["0.08", "0.12", "-0.04", "0", "0", "0", "base_link", "left_wheel_link"]
         )
     ])
